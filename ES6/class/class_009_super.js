@@ -50,4 +50,6 @@ console.log(mam1.bark());		// override --> (1)기각하다;무시하다(2)~보�
 mam1.move();
 
 // 속성 출력
-console.log(Object.getOwnPropertyNames(mam1)); // ??? 
+console.log(Object.getOwnPropertyNames(mam1)); // ["group", "name", "finger", "toe", "eyesight"]
+console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(mam1)) ); //['constructor', 'run', 'bark', 'move']
+
