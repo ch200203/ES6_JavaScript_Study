@@ -50,7 +50,31 @@ class Animal2 {
 	#privateMethod(){
 		return `Hello, Private Method`
 	}
+	
+	getPrivateMethod(){
+		return this.#privateMethod();
+	}
 }
 
 const ani2 =  new Animal2();
-console.log(ani2.privateMethod()); 		// Private Err
+// console.log(ani2.privateMethod()); 		// Private Err
+console.log(ani2.getPrivateMethod());
+
+
+// [4] : Private Static Method
+console.clear();
+class Animal3{
+	static #privateStaticMethod(){
+		return 'Hello, Private Static Method~';
+	}
+	static getPrivateStaticMethod() {
+		this.#privateStaticMethod();
+	}
+	static getPrivateStaticMethod_ClassName(){
+		return Animal3.#privateStaticMethod();
+	}
+}
+
+// console.log(Animal3.#privateStaticMethod()); 		// Private Err
+console.log(Animal3.getPrivateStaticMethod());	
+console.log(Animal3.getPrivateStaticMethod_ClassName());

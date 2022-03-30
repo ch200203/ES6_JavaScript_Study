@@ -16,3 +16,10 @@
 		- class 개념
 		- Hoisting, Class Hoisting
 		- JavaScript 상속
+		- Private 접근제어자
+		- Object.create()를 통한 상속
+		- 다형성 
+			- for ..of 과 toString()
+			- @@iterator 객체
+	
+	5) function
