@@ -19,3 +19,42 @@
 
 
 // [2] : 이터러블 객체의 생성
+// 기본적으로 이터러블 객체(반복 가능한 객체)라면 Symbol.iterator키를 가진다.
+
+// String
+const str1 = "WAK";
+const iterator = str1[Symbol.iterator]();
+console.log(iterator); 	// 이터레이터 객체는 --> "이터레이터 규약"에 따라 --> 내부의 next() 메서드를 통해 하나씩의 값을 순차적으로 열거
+						// 이때, 열거는 객체이며 --> 속성으로 --> value, done 2가지 속성을 가짐.
+						// value(값), done(열거가 끝이면 true 반환, 이때, value는 undefined)
+// console.log(iterator.next()); // value : W , done : false
+// console.log(iterator.next()); // value : A , done : false
+// console.log(iterator.next()); // value : K , done : false
+// console.log(iterator.next()); // value : undefined , done : true --> 열거할 값이 없을 때 true 반환
+
+console.clear();
+
+for(let value of str1){
+	console.log(value); // W, A, K
+}
+
+for(let value of iterator){
+	console.log(value); // W, A, K
+}
+
+
+// Array
+const arr1 = ['seoul', 'goyang', 'jeju', 'pusan', 'dokdo'];
+const iter = arr1[Symbol.iterator]();
+console.log(iter);
+
+for(let value of iter){
+	 console.log(value);
+}
+
+for(let i = 0; i < arr1.length; i++) {
+	console.log(iter.next());
+}
+
+
+
