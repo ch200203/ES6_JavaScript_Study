@@ -23,3 +23,4 @@
 			- @@iterator 객체
 	
 	5) function
+		- closure
